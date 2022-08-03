@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.connection {
+	display:flex;
+	justify-content: space-between;
+}
+
+.articles {
+	display:flex;
+	justify-content: space-between;
+}

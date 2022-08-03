@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<form action="<c:url value="/Inscription"/>" method="post">
+	<form action="<c:url value="/Modifier"/>" method="post">
 		<label>Pseudo : </label> <input type="text" name="pseudo" value="${utilisateur.pseudo}" /><br>
 		<label>Nom : </label> <input type="text" name="nom" value="${utilisateur.nom}"/><br> 
 		<label>Prénom : </label> <input type="text" name="prenom" value="${utilisateur.prenom}"/><br>

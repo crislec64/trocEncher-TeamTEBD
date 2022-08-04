@@ -13,8 +13,11 @@
 
 <h1 id="mainTitre">Liste des enchères</h1>
 
+<<<<<<< HEAD
 <%@ include file="/vente/articless.jsp"%>
 
+=======
+>>>>>>> branch 'master' of git@github.com:crislec64/trocEnchere-TeamTEBD.git
 
 </body>
 </html>

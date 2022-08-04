@@ -13,7 +13,7 @@
 
 <h1 id="mainTitre">Liste des enchères</h1>
 
-<%@ include file="/vente/articles.jsp"%>
+<%@ include file="/vente/articless.jsp"%>
 
 
 </body>

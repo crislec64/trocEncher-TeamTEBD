@@ -11,10 +11,7 @@
 <%@ include file="/utilisateur/connection.jsp"%>
 <%@ include file="/vente/filtre.jsp"%>
 
-<h1>Liste des enchères</h1>
-
-<c:if test="${utilisateur==null}"><p>Vous n'êtes pas connecté</p></c:if>
-<c:if test="${utilisateur!=null}"><p>Vous êtes connecté</p></c:if>
+<h1 id="mainTitre">Liste des enchères</h1>
 
 <%@ include file="/vente/articles.jsp"%>
 

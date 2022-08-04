@@ -8,8 +8,12 @@
 <meta charset="UTF-8">
 <title>Modifier profil</title>
 </head>
-<body>
+<%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
+<h1 id="mainTitre">Modifier son profil</h1>
+
+<div id="bodySite">
 	<form action="<c:url value="/Modifier"/>" method="post">
 		<label>Pseudo : </label> <input type="text" name="pseudo" value="${utilisateur.pseudo}" /><br>
 		<label>Nom : </label> <input type="text" name="nom" value="${utilisateur.nom}"/><br> 
@@ -30,6 +34,6 @@
 		<input type="submit" value="Envoyer" />
 
 	</form>
-	<a href="<c:url value="/index.jsp"/>">Retour à la page d'accueil</a>
+	</div>
 </body>
 </html>

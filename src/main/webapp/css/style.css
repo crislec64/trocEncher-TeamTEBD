@@ -1,11 +1,150 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Ultra&display=swap');
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  ;
 
-.connection {
-	display:flex;
-	justify-content: space-between;
+}
+* {
+	margin: 0%;
+	padding: 0%;
 }
 
-.articles {
+header {
+	text-align:right;
+	margin: 0%;
 	display:flex;
 	justify-content: space-between;
+	align-items: flex-end;
+	border-bottom: 1rem solid #fff;
 }
+body {
+	background-color: #ebebdb;
+	
+}
+header h1 {
+	font-family: 'Ultra', serif;
+	font-size: 4em;
+	color: #fff;
+}
+#mainTitre {
+	font-family: 'Ultra', serif;
+	font-size: 2em;
+	text-align: center;
+	margin-bottom: 4vh;
+}
+h2 {
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 1.6em;
+	margin: 4vh 0 4vh 0;
+}
+ul {
+	list-style-type: none;
+	overflow: hidden;
+}
+li {
+	display: inline;
+	float: left;
+}
+header li a {
+  display: block;
+  padding: 1vh 1vw 0 1vw;
+  text-decoration: none;
+  color: #222;
+  font-size: 1.4em;
+  font-family: 'Kumbh Sans', sans-serif;
+
+}
+li a:hover {
+	background-color: #fff;
+	}
+nav {
+	margin-right: 10vw;
+	
+}
+#filtre {
+	margin-left: 10vw;
+	width: 30vw;
+	background: #fff;
+	border: 1em solid #fff;
+	border-radius: 0 0 20% 20%;
+}
+#filtre fieldset {
+	padding: 0.6em;
+	width: 20vw;
+	margin: auto;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+legend {
+	font-size: 1.4em;
+}
+input,option,select {
+	background-color: #ebebdb;
+}
+#boutonSubmit {
+	padding: 1em;
+}
+#bodySite {
+	width:90vw;
+	margin: auto;
+}
+form {
+	width:20vw;
+	margin: auto;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+#bodySite input {
+	background-color: #fff;
+	display: inline;
+  	float: right;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 1em;
+  width: 20vw;
+  height:40vh;
+  display: inline;
+  float: left;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container {
+  padding: 2px 16px;
+}
+img {
+  border-radius: 5px 5px 0 0;
+  width:100%;
+}
+table {
+  border: solid #222;
+  margin: auto;
+  border-collapse: collapse;
+  
+}
+th, td {
+  padding: 0.5em;
+  text-align: left;
+}
+tr:hover {background-color: #fff;}
+tr a:hover {
+	background-color: #ebebdb;
+	}
+
+
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #222;
+  font-size: 1em;
+  font-family: 'Kumbh Sans', sans-serif;
+
+}
+a:hover {
+	background-color: #fff;
+	}

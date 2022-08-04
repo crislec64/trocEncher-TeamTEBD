@@ -4,16 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="<c:url value="/css/style.css"/>">
+<meta charset="UTF-8">
+<title>Vous êtes connecté</title>
 </head>
 <body>
 <%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
-<p>Vous êtes connecté</p>
+<h1 id="mainTitre">Vous êtes connecté</h1>
 
 
 
-<a href="<c:url value="/index.jsp"/>">Retour à la page d'accueil</a>
 </body>
 </html>

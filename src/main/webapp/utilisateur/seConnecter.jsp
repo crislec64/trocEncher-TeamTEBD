@@ -9,7 +9,12 @@
 <title>Se connecter</title>
 </head>
 <body>
+<%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
+<h1 id="mainTitre">Connexion</h1>
+
+<div id="bodySite">
 <form action="<c:url value="/Connection"/>" method="get">
 <label>Pseudo :</label>	<input type="text" name="pseudo"/><br>
 <label>Mot de passe :</label>	<input type="password" name="motDePasse"/><br>
@@ -20,6 +25,6 @@
 <a href="<c:url value="/utilisateur/inscription.jsp"/>">S'inscrire</a>
 	
 </form>
-<a href="<c:url value="/index.jsp"/>">Retour à la page d'accueil</a>
+</div>
 </body>
 </html>

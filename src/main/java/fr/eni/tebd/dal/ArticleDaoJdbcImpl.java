@@ -48,7 +48,7 @@ public class ArticleDaoJdbcImpl implements ArticleDAO {
 				
 		createStatement stmt = con.createStarement("SELECT ALL FROM ARTICLES");
 		
-		return.this
+		
 		
 		} catch (Exception e) {
 			e.printStackTrace();

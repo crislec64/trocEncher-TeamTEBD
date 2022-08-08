@@ -9,7 +9,12 @@
 <title>Inscription</title>
 </head>
 <body>
+<%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
+<h1 id="mainTitre">Inscription</h1>
+
+<div id="bodySite">
 	<form action="<c:url value="/Inscription"/>" method="post">
 		<label>Pseudo : </label> <input type="text" name="pseudo" /><br>
 		<label>Nom : </label> <input type="text" name="nom" /><br> 
@@ -26,9 +31,9 @@
 		<label>Mot de passe :</label> <input type="password" name="motDePasse" /><br> 
 		
 		
-		<input type="submit" value="Envoyer" />
+		<input type="submit" value="Envoyer" id="boutonSubmit"/>
 
 	</form>
-	<a href="<c:url value="/index.jsp"/>">Retour à la page d'accueil</a>
+</div>
 </body>
 </html>

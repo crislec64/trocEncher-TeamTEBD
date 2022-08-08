@@ -10,47 +10,68 @@
 </head>
 <body>
 <%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
-<h1>Mon profil</h1>
- <table border = "1">
+<h1 id="mainTitre">Mon profil</h1>
+
+<div id="bodySite">
+<table>
          <tr>
          	<th>noUtilisateur</th>
-         	<th>Pseudo</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Email</th>
-            <th>Téléphone</th>
-            <th>Numéro de rue</th>
-            <th>Rue</th>
-            <th>Code postal</th>
-            <th>Ville</th>
-            <th>MotDePasse</th>
-            <th>Crédit</th>
-            <th>Administrateur</th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
+         	<td> <c:out value = "${utilisateur.noUtilisateur}"/></td>
          </tr>
-            <tr>
-            	<td> <c:out value = "${utilisateur.noUtilisateur}"/></td>
-       		    <td> <c:out value = "${utilisateur.pseudo}"/></td>
-               <td> <c:out value = "${utilisateur.nom}"/></td>
-               <td> <c:out value = "${utilisateur.prenom}"/></td>
-               <td> <c:out value = "${utilisateur.email}"/></td>
-               <td> <c:out value = "${utilisateur.telephone}"/></td>
-               <td> <c:out value = "${utilisateur.noRue}"/></td>
-               <td> <c:out value = "${utilisateur.rue}"/></td>
-               <td> <c:out value = "${utilisateur.codePostal}"/></td>
-               <td> <c:out value = "${utilisateur.ville}"/></td>
-               <td> <c:out value = "${utilisateur.motDePasse}"/></td>
-               <td> <c:out value = "${utilisateur.credit}"/></td>
-               <td> <c:out value = "${utilisateur.administrateur}"/></td>
-               <td> <a href="<c:url value="/utilisateur/modifier.jsp"/>">Modifier</a></td>
-               <td> <a href="<c:url value="/utilisateur/supprimer.jsp"/>">Supprimer</a></td>
-            </tr>
-            
+         <tr>
+         	<th>Pseudo</th>
+         	<td> <c:out value = "${utilisateur.pseudo}"/></td>
+         </tr>
+         <tr>
+         	<th>Nom</th>
+         	<td> <c:out value = "${utilisateur.nom}"/></td>
+         </tr>
+         <tr>
+         	<th>Prénom</th>
+         	<td> <c:out value = "${utilisateur.prenom}"/></td>
+         </tr>
+         <tr>
+         	<th>Email</th>
+         	<td> <c:out value = "${utilisateur.email}"/></td>
+         </tr>
+         <tr>
+         	<th>Téléphone</th>
+         	<td> <c:out value = "${utilisateur.telephone}"/></td>
+         	
+         </tr>
+         <tr>
+         	<th>Numéro de rue</th>
+         	<td> <c:out value = "${utilisateur.noRue}"/></td>
+         </tr>
+         <tr>
+         	<th>Rue</th>
+         	<td> <c:out value = "${utilisateur.rue}"/></td>
+         </tr>
+         <tr>
+         	<th>Code postal</th>
+         	<td> <c:out value = "${utilisateur.codePostal}"/></td>
+         </tr>
+         <tr>
+         	<th>Ville</th>
+         	<td> <c:out value = "${utilisateur.ville}"/></td>
+         </tr>
+         <tr>
+         	<th>MotDePasse</th>
+         	<td> <c:out value = "${utilisateur.motDePasse}"/></td>
+         </tr>
+         <tr>
+         	<th>Crédit</th>
+         	<td> <c:out value = "${utilisateur.credit}"/></td>
+         </tr>
+         <tr>
+         	<th>Administrateur</th>
+         	<td> <c:out value = "${utilisateur.administrateur}"/></td>
+         </tr>
+         <tr><td><a href="<c:url value="/utilisateur/modifier.jsp"/>">Modifier mon profil</a></td></tr>
+         <tr><td><a href="<c:url value="/utilisateur/supprimer.jsp"/>">Supprimer</a><td></tr>
       </table>
-
-<a href="<c:url value="/index.jsp"/>">Retour à la page d'accueil</a>
-
+</div>
 </body>
 </html>

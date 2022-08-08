@@ -4,19 +4,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 
+=======
+<link rel="stylesheet" href="<c:url value="css/style.css"/>">
+>>>>>>> branch 'Article' of https://github.com/crislec64/trocEnchere-TeamTEBD.git
 <meta charset="UTF-8">
 <title>Confirmation</title>
 </head>
 <body>
+<%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
+<h1 id="mainTitre">Confirmation</h1>
 
-<h1>Menu</h1>
+<div id="bodySite">
 
 <p>L'opération demandée a été correctement exécutée.</p>
-
-<a href="<c:url value="index.jsp"/>">Retour à la page d'accueil</a>
-
+</div>
 </body>
 </html>

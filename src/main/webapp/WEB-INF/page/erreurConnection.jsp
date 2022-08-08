@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+
 <meta charset="UTF-8">
 <title>Erreur Connection</title>
 </head>

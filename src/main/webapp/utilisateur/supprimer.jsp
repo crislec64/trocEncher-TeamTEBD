@@ -11,6 +11,7 @@
 </head>
 <body>
 <%@ include file="/utilisateur/connection.jsp"%>
+<%@ include file="/vente/filtre.jsp"%>
 
 
 <p>Confirmer la suppression de l'utilisateur <c:out value = "${utilisateur.noUtilisateur}"/> ?</p>

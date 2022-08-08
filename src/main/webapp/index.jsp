@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value="css/style.css"/>">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css" />
 <meta charset="UTF-8">
 <title>Accueil</title>
 </head>

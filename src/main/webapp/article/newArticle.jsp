@@ -24,21 +24,20 @@
 </div>
 <div class="form-row mt-2">
     <label for="description" class="form col-2 offset-md-3 col-md-2">Description</label>
-    <textarea name="description" id="description" cols="30" rows="10" class="form-control offset-1 col-8 col-md-3"></textarea>
+    <textarea name="descriptionArticles" id="description" cols="30" rows="10" class="form-control offset-1 col-8 col-md-3"></textarea>
 </div>
 <div class="form-row mt-2">
     <label class="col-2 offset-md-3 col-md-2" for="noCategorie">Catégorie</label>
-    <select name="noCategorie" id="noCategorie" class="form-control offset-1 col-8 col-md-3">
+    <select name="noCategories" id="noCategories" class="form-control offset-1 col-8 col-md-3">
     <option value=0>Veuillez choisir la catégorie</option>
-    <option value=1>Informatique</option>
- <option value=2>Ammeublement</option>
- <option value=3>Vêtement</option>
- <option value=4>Sport & Loisir</option>
+    	<option value=1>Informatique</option>
+ 		<option value=2>Ameublement</option>
+ 		<option value=3>Vêtement</option>
+ 		<option value=4>Sport & Loisir</option>
     </select>
 </div>
 
 
-https://www.pexels.com/fr-fr/photo/mer-naviguer-yacht-nautique-6636983/
 <div class="form-row mt-2">
     <label for="urlArticle" class="col-4 offset-md-3 col-md-2">Photo de l'article</label>
     <input type="file" class="offset-1 col-7 col-md-3 form-control-file" id="picture">
@@ -52,46 +51,59 @@ https://www.pexels.com/fr-fr/photo/mer-naviguer-yacht-nautique-6636983/
 <div class="form-row mt-3">
     <label for="debutEncheres" class="col-4 offset-md-3 col-md-2">Début de l'enchère</label>
     <div class="offset-1 col-6 col-md-3">
-    <input type="date" class="form-control" id="debutEncheres" min="2022-01-01" name="date"
+    <input type="date" class="form-control" id="debutEncheres" min="2022-01-01" name="debutEncheres"
 					 required="required">              
-</div>
+	</div>
     
 </div>
+
 <div class="form-row">
     <label for="finEncheres" class="col-4 offset-md-3 col-md-2">Fin de l'enchère</label>
-    <div class="offset-1 col-6 col-md-3">
-        <div class="form-group">
-            <input type="date" class="form-control" id="finEncheres" min="2022-01-01" name="date"
-					 required="required">              
+    	<div class="offset-1 col-6 col-md-3">
+        	<div class="form-group">
+            	<input type="date" class="form-control" id="finEncheres" min="2022-01-01" name="finEncheres"
+						 required="required">              
+			</div>
+     	</div>
 </div>
-        </div>
-    </div>
+	
 	<div class="form-group">
 	    <div class="form-row">
 	        <div class="col-form offset-md-3 col-md-1">Retrait</div>
+	        
 	        <div class="form-group offset-md-1 col-md-7">
 	            <div class="form-row">
 	                <label class="col-3" for="street">Rue</label>
-	                <input required type="text" id="Rue" name="Rue" class="form-control d-inline offset-1 col-6 col-md-3">
+	                <input type="text" id="Rue" name="rue" class="form-control d-inline offset-1 col-6 col-md-3">
 	
 	            </div>
+	            
+	            <div class="form-row mt-2">
+	            	<label class="col-3" for="street"> Numero de Rue</label>
+                    <input type="text" id="noRue" name="noRue" class="form-control d-inline offset-1 col-6 col-md-3">
+
+                </div>
+	            
 	            <div class="form-row mt-2">
 	                <label class="col-3" for="codePostal">Code postal</label>
-	                <input required type="text" id="codePostal" name="codePostal" class="form-control d-inline offset-1 col-6 col-md-3" >
+	                <input type="text" id="codePostal" name="codePostal" class="form-control d-inline offset-1 col-6 col-md-3" >
 	            </div>
+	            
 	            <div class="form-row mt-2">
 	                <label class="col-3" for="ville">Ville</label>
-	                <input required type="text" id="ville" name="ville" class="form-control d-inline offset-1 col-6 col-md-3">
+	                <input type="text" id="ville" name="ville" class="form-control d-inline offset-1 col-6 col-md-3">
 	            </div>
 	        </div>
 	    </div>
 	</div>
+
 <div class="form-row">
     <input type="submit" class="btn btn-lg btn-block btn-success offset-1 col-4 offset-md-4 col-md-2">
      <a href="" class="offset-1 col-4 offset-md-1 col-md-2">
         <button type="submit" class="btn btn-lg btn-block btn-danger">Annuler</button>
     </a>
 </div>
+
 </form>
 </body>
 </html>

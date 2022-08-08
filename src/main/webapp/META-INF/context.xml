@@ -6,9 +6,9 @@
 		auth="Container"
 
 	
-		url="jdbc:sqlserver://localhost;databasename=TROCENCHERES"		
-		username="utilisateurBDD"
-		password="Pa$$w0rd"
+		url="jdbc:sqlserver://localhost;databasename=TROCENCHERE"		
+		username="sa"
+		password="fuckmicrosoft"
 	
 		maxTotal="10"
 		maxIdle="30"

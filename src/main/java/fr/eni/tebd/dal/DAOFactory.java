@@ -9,5 +9,9 @@ public abstract class DAOFactory {
 		return new UtilisateurDaoJdbcImpl();
 	}
 	
-
+	public static ArticleDAO getArticleDAO() {
+		
+		return new ArticleDaoJdbcImpl();
+	}
+	
 }

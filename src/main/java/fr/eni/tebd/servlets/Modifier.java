@@ -22,8 +22,8 @@ public class Modifier extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int noUtilisateur = Integer.parseInt(request.getParameter("noUtilisateur"));
 		
+		int noUtilisateur = Integer.parseInt(request.getParameter("noUtilisateur"));
 		
 		String pseudo = request.getParameter("pseudo");
 		String nom = request.getParameter("nom");

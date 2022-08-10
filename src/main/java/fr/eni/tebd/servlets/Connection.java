@@ -37,7 +37,7 @@ public class Connection extends HttpServlet {
 			//int noUtilisateur = utilisateur.getNoUtilisateur();
 
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/page/confirmationConnection.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/Index");
 			rd.forward(request, response);
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/page/erreurConnection.jsp");

@@ -14,7 +14,7 @@
         </c:if>
         <c:if test="${utilisateur!=null}">
         <ul>
-        	<li><a href="">Enchères</a></li>
+        	<li><a href="<c:url value="/Index"/>">Enchères</a></li>
         	<li><a href="<c:url value="/article/newArticle.jsp"/>">Vendre un article</a></li>
 			<li><a href="<c:url value="/utilisateur/monProfil.jsp"/>">Mon profil</a></li>
         	<li><a href="<c:url value="/Deconnection"/>">Se déconnecter</a></li>

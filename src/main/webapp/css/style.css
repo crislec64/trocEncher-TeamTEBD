@@ -19,3 +19,12 @@ header {
 	display:flex;
 	justify-content: space-between;
 }
+
+
+#bodySite {
+		justify-content: space-evenly;
+}
+
+.Card{
+	border: 4mm ridge rgba(211, 220, 50, .6);
+}

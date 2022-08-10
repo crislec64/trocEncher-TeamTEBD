@@ -42,10 +42,11 @@ public class NewArticle extends HttpServlet {
 		String codePostal = request.getParameter("codePostal");
 		String ville = request.getParameter("ville");
 		int noUtilisateur = utilisateur.getNoUtilisateur();
+		int statutArticles = 0;
 		
 		ArticleDAO articleDAO = DAOFactory.getArticleDAO();
 		
-		articleDAO.insert(new Article(noUtilisateur , nomArticles, descriptionArticles, noCategories, prixArticles, debutEncheres, finEncheres,noRue, rue, codePostal, ville));
+		articleDAO.insert(new Article(noUtilisateur , nomArticles, descriptionArticles, noCategories, prixArticles, debutEncheres, finEncheres,noRue, rue, codePostal, ville, statutArticles));
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/page/confirmation.jsp");
         rd.forward(request, response);;

@@ -5,7 +5,7 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+<link rel="stylesheet" href="<c:url value= "css/style.css"/>">
 
 <meta charset="UTF-8">
 <title>Erreur Connection</title>

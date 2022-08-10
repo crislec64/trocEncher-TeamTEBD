@@ -4,12 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 
-=======
 <link rel="stylesheet" href="<c:url value="css/style.css"/>">
->>>>>>> branch 'Article' of https://github.com/crislec64/trocEnchere-TeamTEBD.git
+
 <meta charset="UTF-8">
 <title>Confirmation</title>
 </head>

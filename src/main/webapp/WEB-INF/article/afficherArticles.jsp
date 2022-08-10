@@ -13,8 +13,22 @@
 
 <h1 id="mainTitre">Liste des enchères</h1>
 
+<c:forEach var = "articles" items="${articles}">
 
-<%@ include file="WEB-INF/article/afficherArticles.jsp"%>
+	<div class="Card">
+		<img alt="" src="">
+			
+		<div>
+			
+			<a href="<c:url value="/AfficherUnArticle?id=${articles.noArticles}"/>"><c:out value="${articles.nomArticles}"/></a>
+			<p>Prix : <c:out value="${articles.prixArticles}"/>
+			<p>l'Enchère commence le : <c:out value="${articles.debutEncheres}"/><p>
+			<p>Fin de l'enchère le : <c:out value="${articles.finEncheres}"/><p>
+			
+		</div>
+	
+	</div>
+</c:forEach>
 
 </body>
 </html>

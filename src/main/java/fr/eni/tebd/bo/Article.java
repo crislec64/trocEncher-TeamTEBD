@@ -36,7 +36,7 @@ public class Article {
 	public void setNomArticles(String nomArticles) {
 		this.nomArticles = nomArticles;
 	}
-	public String getDescriptionArticle() {
+	public String getDescriptionArticles() {
 		return descriptionArticles;
 	}
 	public void setDescriptionArticles(String designationArticles) {
@@ -97,11 +97,13 @@ public class Article {
 		this.statutArticles = statutArticles;
 	}
 	
-	public Article(int noArticles, int noUtilisateur, String nomArticles, String descriptionArticles, int noCategories,
-			String urlArticles, int prixArticles, LocalDate debutEncheres, LocalDate finEncheres, int noRue, String rue,
-			String codePostal, String ville, int statutArticles) {
+	
+	//constructeur insert NewArticle
+	
+	public Article(int noUtilisateur, String nomArticles, String descriptionArticles, int noCategories,
+			int prixArticles, LocalDate debutEncheres, LocalDate finEncheres, int noRue, String rue, String codePostal,
+			String ville, int statutArticles) {
 		super();
-		this.noArticles = noArticles;
 		this.noUtilisateur = noUtilisateur;
 		this.nomArticles = nomArticles;
 		this.descriptionArticles = descriptionArticles;
@@ -116,13 +118,15 @@ public class Article {
 		this.statutArticles = statutArticles;
 	}
 	
-	
-	//constructeur insert NewArticle
-	
-	public Article(int noUtilisateur, String nomArticles, String descriptionArticles, int noCategories,
-			int prixArticles, LocalDate debutEncheres, LocalDate finEncheres, int noRue, String rue, String codePostal,
-			String ville) {
+	public Article(int noArticles) {
 		super();
+		this.noArticles = noArticles;
+	}
+	public Article(int noArticles, int noUtilisateur, String nomArticles, String descriptionArticles, int noCategories,
+			int prixArticles, LocalDate debutEncheres, LocalDate finEncheres, int noRue, String rue, String codePostal,
+			String ville, int statutArticles) {
+		super();
+		this.noArticles = noArticles;
 		this.noUtilisateur = noUtilisateur;
 		this.nomArticles = nomArticles;
 		this.descriptionArticles = descriptionArticles;
@@ -134,16 +138,18 @@ public class Article {
 		this.rue = rue;
 		this.codePostal = codePostal;
 		this.ville = ville;
+		this.statutArticles = statutArticles;
+		
 	}
-	public Article() {
-	}
+	
 	@Override
 	public String toString() {
-		return "Article :" + noArticles + noUtilisateur + nomArticles + descriptionArticles + noCategories
-				+ prixArticles + debutEncheres + finEncheres + noRue + rue + codePostal + ville + statutArticles;
+		return "Article [noArticles=" + noArticles + ", noUtilisateur=" + noUtilisateur + ", nomArticles=" + nomArticles
+				+ ", descriptionArticles=" + descriptionArticles + ", noCategories=" + noCategories + ", prixArticles="
+				+ prixArticles + ", debutEncheres=" + debutEncheres + ", finEncheres=" + finEncheres + ", noRue="
+				+ noRue + ", rue=" + rue + ", codePostal=" + codePostal + ", ville=" + ville + ", statutArticles="
+				+ statutArticles + "]";
 	}
-	
-	
 
 }
 

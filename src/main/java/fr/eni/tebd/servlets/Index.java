@@ -21,12 +21,16 @@ public class Index extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		request.setCharacterEncoding("UTF-8");
 		ArticleDAO articleDAO = DAOFactory.getArticleDAO();
         List<Article> articles = articleDAO.selectall();
-        request.getSession().setAttribute("articles", articles);
-        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/article/afficherArticles.jsp");
+        request.getSession().setAttribute("articles", articles);      
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/article/afficherArticles.jsp");
         rd.forward(request, response);
+        
+        
 	}
+
 }
 

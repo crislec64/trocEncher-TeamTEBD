@@ -15,10 +15,12 @@ import fr.eni.tebd.bo.Article;
 public class ArticleDaoJdbcImpl implements ArticleDAO {
 
 	private static final String insertSQL = "INSERT INTO ARTICLES(nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, noUtilisateur,statutArticles)VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String selectAllSQL = "SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES";
+	private static final String selectAllSQL = "SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES ORDER BY finEncheres";
 	private static final String deleteSQL = "DELETE FROM ARTICLES where noArticles=?";
-	private static final String selectByNoUtilisateur = "SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES WHERE noUtilisateur = ?";
+	private static final String selectByNoUtilisateur = "SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES WHERE noUtilisateur = ? ORDER BY finEncheres";
 	private static final String selectByNoArticle = "SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES WHERE noArticles = ?";
+	private static final String selectByNoCategories ="SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES WHERE noCategorie = ? ORDER BY finEncheres";
+	private static final String selectAllByMotClef ="SELECT noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategorie, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles FROM ARTICLES WHERE nomArticles like ? OR descriptionArticles like ? ORDER BY finEncheres";
 	
 	public void insert(Article article) {
 		try (Connection con = PersistenceProvider.getConnection();PreparedStatement pstmt = con.prepareStatement(insertSQL);){
@@ -47,7 +49,7 @@ public class ArticleDaoJdbcImpl implements ArticleDAO {
 	
 	public List<Article> selectall() {
 		
-		ArrayList<Article> listeArticles = new ArrayList<Article>();
+		ArrayList<Article> articles = new ArrayList<Article>();
 		
 		try(Connection con = PersistenceProvider.getConnection();Statement stmt = con.createStatement();ResultSet rs = 	stmt.executeQuery(selectAllSQL);){
 			
@@ -68,7 +70,7 @@ public class ArticleDaoJdbcImpl implements ArticleDAO {
 			String ville = rs.getString(12);
 			int statutArticles = rs.getInt(13);
 						
-			listeArticles.add(new Article(noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategories, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles));
+			articles.add(new Article(noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategories, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles));
 		}
 		
 		
@@ -78,7 +80,7 @@ public class ArticleDaoJdbcImpl implements ArticleDAO {
 
 		}
 		
-		return listeArticles;
+		return articles;
 	}
 	
 	public List<Article> selectByNoUtilisateur(int NoUtilisateur) {
@@ -164,4 +166,85 @@ public class ArticleDaoJdbcImpl implements ArticleDAO {
 		return article;
 	}
 
+	
+	public List<Article> selectByNoCategories(int NoCategories) {
+		
+		ArrayList<Article> articles = new ArrayList<Article>();
+		
+		try(Connection con = PersistenceProvider.getConnection();PreparedStatement pstmt = con.prepareStatement(selectByNoCategories);){
+		
+		pstmt.setInt(1, NoCategories);
+
+		ResultSet rs = pstmt.executeQuery();
+			
+		while (rs.next()) {
+			int noArticles = rs.getInt(1);
+			int noUtilisateur = rs.getInt(2);
+			String nomArticles = rs.getString(3);
+			String descriptionArticles = rs.getString(4);
+			int noCategories = rs.getInt(5);
+			int prixArticles = rs.getInt(6);
+			String debutsEncheresString = rs.getString(7);
+			LocalDate debutEncheres = LocalDate.parse(debutsEncheresString);
+			String finEncheresString = rs.getString(8);
+			LocalDate finEncheres = LocalDate.parse(finEncheresString);
+			int noRue = rs.getInt(9);		
+			String rue = rs.getString(10);
+			String codePostal = rs.getString(11);
+			String ville = rs.getString(12);
+			int statutArticles = rs.getInt(13);
+						
+			articles.add(new Article(noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategories, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles));
+		}
+		
+		
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		
+		return articles;
+	}
+	
+	public List<Article> selectAllByMotClef(String motClef){
+		
+		ArrayList<Article> articles = new ArrayList<Article>();
+		
+		try(Connection con = PersistenceProvider.getConnection();PreparedStatement pstmt = con.prepareStatement(selectAllByMotClef);){
+		
+		pstmt.setString(1, "%" + motClef + "%");
+		pstmt.setString(2, "%" + motClef + "%");
+		
+		ResultSet rs = pstmt.executeQuery();
+			
+		while (rs.next()) {
+			int noArticles = rs.getInt(1);
+			int noUtilisateur = rs.getInt(2);
+			String nomArticles = rs.getString(3);
+			String descriptionArticles = rs.getString(4);
+			int noCategories = rs.getInt(5);
+			int prixArticles = rs.getInt(6);
+			String debutsEncheresString = rs.getString(7);
+			LocalDate debutEncheres = LocalDate.parse(debutsEncheresString);
+			String finEncheresString = rs.getString(8);
+			LocalDate finEncheres = LocalDate.parse(finEncheresString);
+			int noRue = rs.getInt(9);		
+			String rue = rs.getString(10);
+			String codePostal = rs.getString(11);
+			String ville = rs.getString(12);
+			int statutArticles = rs.getInt(13);
+						
+			articles.add(new Article(noArticles, noUtilisateur, nomArticles, descriptionArticles, noCategories, prixArticles, debutEncheres, finEncheres, noRue, rue, codePostal, ville, statutArticles));
+		}
+		
+		
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		
+		return articles;
+	}
 }

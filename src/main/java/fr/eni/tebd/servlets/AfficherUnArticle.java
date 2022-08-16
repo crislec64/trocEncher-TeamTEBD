@@ -22,13 +22,13 @@ public class AfficherUnArticle extends HttpServlet {
 	
 		request.setCharacterEncoding("UTF-8");
 		
+		
 		int noArticles = Integer.parseInt(request.getParameter("id"));
 		
 		ArticleDAO articleDAO = DAOFactory.getArticleDAO();
 		Article article = articleDAO.selectByNoArticle(noArticles);
 		
 		request.getSession().setAttribute("article", article);
-		System.out.println(article);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/article/afficherUnArticle.jsp");
 		rd.forward(request, response);

@@ -16,4 +16,9 @@ public interface ArticleDAO {
 	
 	public Article selectByNoArticle(int noArticles);
 	
+	public List<Article> selectByNoCategories(int NoCategories);
+	
+	public List<Article> selectAllByMotClef(String motClef);
+
+	
 }

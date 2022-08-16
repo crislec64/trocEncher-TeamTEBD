@@ -31,11 +31,6 @@ public class Connection extends HttpServlet {
 		if (utilisateurDAO.control(user) == true) {
 			Utilisateur utilisateur = utilisateurDAO.selectByPseudo(pseudo);
 			request.getSession().setAttribute("utilisateur", utilisateur);
-
-			// Je récupère l'identifiant
-
-			//int noUtilisateur = utilisateur.getNoUtilisateur();
-
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/Index");
 			rd.forward(request, response);

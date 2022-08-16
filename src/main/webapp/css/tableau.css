@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Ultra&display=swap');
+
+table, th, td {
+	border: 1px solid;
+}
+
+:root{
+	--custom: radial-gradient(farthest-corner at 40px 40px,
+      rgb(86, 82, 82) 0%, rgb(37, 36, 36) 100%);
+}
+
+
+body {
+	background-image: var(--custom);
+	height: 100%;
+	background-repeat: no-repeat;
+}
+
+
+header {
+	height: 10vh; 
+}
+
+#divImageLogo {
+	background-color: white;
+}
+
+#mainTitre {
+	color:rgb(238, 214, 185);
+
+}
+
+h1,h2,h3,h4,h6,h7,h8,label,th,td {
+	color: rgb(238, 214, 185);
+}
+
+main {
+	height: 100%;
+	margin-top: 15vh;
+	padding: 5vh;
+	min-height: 100vh;
+}
+
+.subscribe-form {
+	width: 325px;
+}
+
+.subscribe-form input {
+	float:right;
+}
+
+.liensCouleur {
+	font-weight: bold;
+	color: bisque;
+}
+
+ a:hover.liensCouleur {
+	font-weight: bold;
+	color: bisque !important;
+}
+
+.card {
+	transition: box-shadow .3s;
+	border: 1px solid #ccc;
+}
+
+.card:hover {
+	box-shadow: 3px -3px 10px bisque;
+
+}
+.card-title {
+	font-weight: bold;
+}
+
+.conteneur {
+	margin: 5vh;
+	margin-top: 0;
+	margin-bottom: 0;
+}

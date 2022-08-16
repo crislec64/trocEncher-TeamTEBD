@@ -9,7 +9,6 @@
 </head>
 <body>
 <%@ include file="/utilisateur/connection.jsp"%>
-<%@ include file="/vente/filtre.jsp"%>
 
 <h1 id="mainTitre">Liste des enchères</h1>
 

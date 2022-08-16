@@ -23,22 +23,24 @@ public class Modifier extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		int noUtilisateur = Integer.parseInt(request.getParameter("noUtilisateur"));
+		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 		
-		String pseudo = request.getParameter("pseudo");
-		String nom = request.getParameter("nom");
-		String prenom = request.getParameter("prenom");
-		String email = request.getParameter("email");
-		String telephone = request.getParameter("telephone");
-		int noRue = Integer.parseInt(request.getParameter("noRue"));
-		String rue = request.getParameter("rue");
-		String codePostal = request.getParameter("codePostal");
-		String ville = request.getParameter("ville");
-		String motDePasse = request.getParameter("motDePasse");
-		
-		
-		UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-		utilisateurDAO.update(new Utilisateur(noUtilisateur,pseudo,nom,prenom,email,telephone,noRue,rue,codePostal,ville,motDePasse));
+		if(utilisateur!=null) {
+	        utilisateur.setPseudo(request.getParameter("pseudo"));
+	        utilisateur.setNom(request.getParameter("nom"));
+	        utilisateur.setPrenom(request.getParameter("prenom"));
+	        utilisateur.setEmail(request.getParameter("email"));
+	        utilisateur.setTelephone(request.getParameter("telephone"));
+	        utilisateur.setNoRue(Integer.parseInt(request.getParameter("noRue")));
+	        utilisateur.setRue(request.getParameter("rue"));
+	        utilisateur.setCodePostal(request.getParameter("codePostal"));
+	        utilisateur.setVille(request.getParameter("ville"));
+	        utilisateur.setMotDePasse(request.getParameter("motDePasse"));
+	        
+	        
+	        UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
+	        utilisateurDAO.update(utilisateur);
+		} 
 
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/page/confirmation.jsp");
